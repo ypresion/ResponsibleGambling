@@ -1,16 +1,16 @@
 var scraper = require('app-store-scraper');
 var fs = require('fs');
 
-var logStream = fs.createWriteStream('gamble.json', {flags: 'a'});
+var logStream = fs.createWriteStream('casino_Apple.json', {flags: 'a'});
 
 scraper.search({
-  term: "gamble",
-  num: 10,
+  term: "casino",
+  num: 200,
   country: "gb",
 })
 .then(function(result) {
-  //const newResult = result.map(({url, ...details}) => details)
-  saveResult(result);
+  const newResult = result.map(({id, url, icon, genreIds, primaryGenre, primaryGenreId, languages, size, requiredOsVersion, currency, free, developerId, developerUrl, developerWebsite, screenshots, ipadScreenshots, appletvScreenshots, supportedDevices, ...details}) => details)
+  saveResult(newResult);
 })
 .catch(console.log);
 
