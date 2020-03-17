@@ -1,0 +1,15 @@
+{
+  "name": "scraping",
+  "version": "1.0.0",
+  "description": "App data scraping for gambling data analysis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sylwia Krupa",
+  "license": "ISC",
+  "dependencies": {
+    "app-store-scraper": "^0.16.2",
+    "google-play-scraper": "^7.1.2"
+  }
+}
