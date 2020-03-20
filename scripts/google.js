@@ -19,6 +19,6 @@ scraper.search({
 
 
 function saveResult(r) {
-    logStream.write(JSON.stringify(r));
+    logStream.write(JSON.stringify(r, null, 1));
     logStream.end();
 }
