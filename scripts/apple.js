@@ -2,6 +2,9 @@ var scraper = require('app-store-scraper');
 var fs = require('fs');
 
 var logStream = fs.createWriteStream('test.json', {flags: 'a'});
+const keywords = ['gamble', 'gambling', 'bet', 'betting', 'casino'];
+
+
 
 scraper.search({
   term: "casino",
