@@ -9,7 +9,7 @@ function getAppleData(searchTerm) {
     
     apple.search({
         term: searchTerm.toString(),
-        num: 4,
+        num: 199, 
         country: "gb",
     })
     .then(function(result) {
@@ -23,7 +23,7 @@ function getGoogleData(searchTerm) {
     
     google.search({
         term: searchTerm.toString(),
-        num: 4,
+        num: 199,
         country: "gb",
         price: "free",
         throttle: 10,
