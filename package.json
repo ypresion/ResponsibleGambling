@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "app-store-scraper": "^0.16.2",
-    "google-play-scraper": "^7.1.2"
+    "google-play-scraper": "^7.1.2",
+    "json2csv": "^5.0.0"
   }
 }
