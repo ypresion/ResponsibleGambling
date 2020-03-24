@@ -36,7 +36,6 @@ function getGoogleData(searchTerm) {
     .catch(console.log);
 }
 
-
 keywords.forEach(function(keyword) {
     getAppleData(keyword);
     getGoogleData(keyword);

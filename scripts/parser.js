@@ -3,7 +3,7 @@ const { Parser } = require('json2csv');
 
 //Parse JSON to csv
 //@param file file name
-//platform google or apple
+//@param platform google or apple
 function parseData(file, platform) {
     const parser = new Parser();
     let path;
@@ -20,7 +20,7 @@ function parseData(file, platform) {
     let data = JSON.parse(rawData);
     
     let csv = parser.parse(data);
-    fs.writeFileSync('../test.csv', csv);
+    fs.writeFileSync('../' + file + '.csv', csv);
 }
 
-parseData('bet', 'apple');
+parseData('gambling', 'google');
