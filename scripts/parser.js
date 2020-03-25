@@ -4,16 +4,17 @@ const { Parser } = require('json2csv');
 //Parse JSON to csv
 //@param file file name
 //@param platform google or apple
-function parseData(file, platform) {
+//@date date string in DD.MM format
+function parseData(file, platform, date) {
     const parser = new Parser();
     let path;
     switch(platform) {
         case 'apple':
-        path = '../appleStoreData/' + file + '.json';
+        path = '../appleStoreData/' + date + '/' + file + '.json';
         break;
         
         case 'google':
-        path = '../googleStoreData/' + file + '.json';
+        path = '../googleStoreData/' + date + '/' + file + '.json';
         break;
     }
     let rawData = fs.readFileSync(path);
@@ -23,4 +24,5 @@ function parseData(file, platform) {
     fs.writeFileSync('../' + file + '.csv', csv);
 }
 
-parseData('gambling', 'google');
+//example
+parseData('ganble', 'apple', '24.03');
