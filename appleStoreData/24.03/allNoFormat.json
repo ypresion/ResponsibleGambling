@@ -4117,7 +4117,8 @@
   "reviews": 190,
   "currentVersionScore": 4.95263,
   "currentVersionReviews": 190
- },
+ }
+][
  {
   "appId": "com.boylesports.bettingapp",
   "title": "BoyleSports Sports Betting",
@@ -8177,7 +8178,8 @@
   "reviews": 1,
   "currentVersionScore": 5,
   "currentVersionReviews": 1
- },
+ }
+][
  {
   "appId": "com.vegascash.slots",
   "title": "Billion Cash Slots-Casino Game",
@@ -12444,7 +12446,8 @@
   "reviews": 757,
   "currentVersionScore": 4.68692,
   "currentVersionReviews": 757
- },
+ }
+][
  {
   "appId": "com.gamesys.monopolycasino",
   "title": "MONOPOLY Casino",
@@ -16664,7 +16667,8 @@
   "reviews": 3,
   "currentVersionScore": 3,
   "currentVersionReviews": 3
- },
+ }
+][
  {
   "appId": "com.gamesys.monopolycasino",
   "title": "MONOPOLY Casino",
@@ -20891,4 +20895,4 @@
   "currentVersionScore": 1,
   "currentVersionReviews": 1
  }
-]
+]

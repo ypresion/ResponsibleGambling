@@ -25,4 +25,4 @@ function parseData(file, platform, date) {
 }
 
 //example
-parseData('ganble', 'apple', '24.03');
+parseData('all', 'google', '24.03');
