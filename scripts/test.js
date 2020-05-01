@@ -6,3 +6,4 @@ let data = JSON.parse(rawData);
 
 let xls = json2xls(data);
 fs.writeFileSync('data.xlsx', xls, 'binary');
+
