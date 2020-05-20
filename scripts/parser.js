@@ -14,10 +14,10 @@ function parseData(file, platform, date, format) {
             path = '../appleData/' + date + '/' + file + '.json';
             break;
             
-            case 'google':
-                path = '../googleData/' + date + '/' + file + '.json';
-                break;
-            }
+        case 'google':
+            path = '../googleData/' + date + '/' + file + '.json';
+            break;
+        }
 
     let rawData = fs.readFileSync(path);
     let data = JSON.parse(rawData);
@@ -31,10 +31,10 @@ function parseData(file, platform, date, format) {
 
         case 'xls':
             let xlsx = xls(data);
-            fs.writeFileSync('all.xlsx', xlsx, 'binary');   
+            fs.writeFileSync(file + '.xlsx', xlsx, 'binary');   
         break;     
     }              
 }
 
 //example
-parseData('all', 'apple', '07.04', 'xls');
+parseData('all', 'apple', '12.05', 'csv');

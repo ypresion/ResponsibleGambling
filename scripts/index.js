@@ -3,13 +3,15 @@ var google = require('google-play-scraper');
 var fs = require('fs');
 
 //const keywords = ['gamble', 'gambling', 'bet', 'betting', 'casino'];
-const keywords = ['gambling', 'betting', 'casino', 'slots', 'roulette', 'blackjack', 'poker', 'lottery', 'scratch cards', 'bingo'];
+//const keywords = ['gambling', 'betting', 'casino', 'slots', 'roulette', 'blackjack', 'poker', 'lottery', 'scratch cards', 'bingo'];
+const keywords = ['gambling', 'betting', 'casino', 'slots', 'roulette', 'blackjack', 'poker', 'lottery', 'scratch cards', 'bingo', 'sports betting', 'spread betting'];
+
 
 function getAppleData(searchTerm) {
     
     apple.search({
         term: searchTerm.toString(),
-        num: 199, 
+        num: 100, 
         country: "gb",
     })
     .then(function(result) {
@@ -18,7 +20,7 @@ function getAppleData(searchTerm) {
             o.searchTerms = searchTerm.toString();
             return o;
           });
-        fs.writeFileSync('../appleData/07.04/' + searchTerm + '.json', JSON.stringify(data, null, 1));
+        fs.writeFileSync('../appleData/12.05/' + searchTerm + '.json', JSON.stringify(data, null, 1));
     })
     .catch(console.log);
 }
@@ -27,7 +29,7 @@ function getGoogleData(searchTerm) {
     
     google.search({
         term: searchTerm.toString(),
-        num: 199,
+        num: 100,
         country: "gb",
         price: "free",
         throttle: 10,
@@ -39,11 +41,10 @@ function getGoogleData(searchTerm) {
             o.searchTerms = searchTerm.toString();
             return o;
           });
-        fs.writeFileSync('../googleData/07.04/' + searchTerm + '.json', JSON.stringify(data, null, 1));
+        fs.writeFileSync('../googleData/12.05/' + searchTerm + '.json', JSON.stringify(data, null, 1));
     })
     .catch(console.log);
 }
-
 
 keywords.forEach(function(keyword) {
      getAppleData(keyword);
