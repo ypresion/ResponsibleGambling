@@ -5,9 +5,11 @@ var fs = require('fs');
 //const keywords = ['gamble', 'gambling', 'bet', 'betting', 'casino'];
 //const keywords = ['gambling', 'betting', 'casino', 'slots', 'roulette', 'blackjack', 'poker', 'lottery', 'scratch cards', 'bingo'];
 const keywords = ['gambling', 'betting', 'casino', 'slots', 'roulette', 'blackjack', 'poker', 'lottery', 'scratch cards', 'bingo', 'sports betting', 'spread betting'];
+const applePATH = '../appleData/12.05/';
+const googlePATH = '../googleData/12.05/';
 
 
-function getAppleData(searchTerm) {
+function getAppleData(searchTerm, path) {
     
     apple.search({
         term: searchTerm.toString(),
@@ -20,12 +22,12 @@ function getAppleData(searchTerm) {
             o.searchTerms = searchTerm.toString();
             return o;
           });
-        fs.writeFileSync('../appleData/12.05/' + searchTerm + '.json', JSON.stringify(data, null, 1));
+        fs.writeFileSync(path.toString() + searchTerm + '.json', JSON.stringify(data, null, 1));
     })
     .catch(console.log);
 }
 
-function getGoogleData(searchTerm) {
+function getGoogleData(searchTerm, path) {
     
     google.search({
         term: searchTerm.toString(),
@@ -41,13 +43,13 @@ function getGoogleData(searchTerm) {
             o.searchTerms = searchTerm.toString();
             return o;
           });
-        fs.writeFileSync('../googleData/12.05/' + searchTerm + '.json', JSON.stringify(data, null, 1));
+        fs.writeFileSync(path + searchTerm + '.json', JSON.stringify(data, null, 1));
     })
     .catch(console.log);
 }
 
 keywords.forEach(function(keyword) {
-     getAppleData(keyword);
-     getGoogleData(keyword);
+    getAppleData(keyword, applePATH);
+    getGoogleData(keyword, googlePATH);
 });
 
