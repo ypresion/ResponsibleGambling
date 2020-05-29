@@ -9,7 +9,7 @@ const applePATH = '../appleData/12.05/';
 const googlePATH = '../googleData/12.05/';
 
 
-function getAppleData(searchTerm, path) {
+function getAppleData(searchTerm) {
     
     apple.search({
         term: searchTerm.toString(),
@@ -22,12 +22,12 @@ function getAppleData(searchTerm, path) {
             o.searchTerms = searchTerm.toString();
             return o;
           });
-        fs.writeFileSync(path.toString() + searchTerm + '.json', JSON.stringify(data, null, 1));
+        fs.writeFileSync(applePATH + searchTerm + '.json', JSON.stringify(data, null, 1));
     })
     .catch(console.log);
 }
 
-function getGoogleData(searchTerm, path) {
+function getGoogleData(searchTerm) {
     
     google.search({
         term: searchTerm.toString(),
@@ -43,13 +43,13 @@ function getGoogleData(searchTerm, path) {
             o.searchTerms = searchTerm.toString();
             return o;
           });
-        fs.writeFileSync(path + searchTerm + '.json', JSON.stringify(data, null, 1));
+        fs.writeFileSync(googlePATH + searchTerm + '.json', JSON.stringify(data, null, 1));
     })
     .catch(console.log);
 }
 
 keywords.forEach(function(keyword) {
-    getAppleData(keyword, applePATH);
-    getGoogleData(keyword, googlePATH);
+    getAppleData(keyword);
+    getGoogleData(keyword);
 });
 

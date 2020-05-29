@@ -2,6 +2,9 @@ var apple = require('app-store-scraper');
 var google = require('google-play-scraper');
 var fs = require('fs');
 
+const googlePATH = '../googleData/01.05/';
+const applePATH = '../appleData/01.05/';
+
 function getAppleReviews(id) {
     
     apple.reviews({
@@ -13,7 +16,7 @@ function getAppleReviews(id) {
     .then(function(result) {
         const data = result.map(({id, userUrl, url, ...details}) => details)
 
-        fs.writeFileSync('../appleData/01.05/' + id + '.json', JSON.stringify(data, null, 1));
+        fs.writeFileSync(applePATH + id + '.json', JSON.stringify(data, null, 1));
     })
     .catch(console.log);
 }
@@ -29,7 +32,7 @@ function getGoogleReviews(id) {
     })
     .then(function(result) {
         let data = result.map(({id, userImage, scoreText, url, criterias, ...details}) => details);
-        fs.writeFileSync('../googleData/01.05/' + id + '.json', JSON.stringify(data, null, 1));
+        fs.writeFileSync(googlePATH + id + '.json', JSON.stringify(data, null, 1));
     })
     .catch(console.log);
 }
