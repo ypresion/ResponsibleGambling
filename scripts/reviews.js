@@ -2,8 +2,8 @@ var apple = require('app-store-scraper');
 var google = require('google-play-scraper');
 var fs = require('fs');
 
-const googlePATH = '../googleData/01.05/';
-const applePATH = '../appleData/01.05/';
+const googlePATH = '../google/reviews/31.05/';
+const applePATH = '../apple/reviews/31.05/';
 
 function getAppleReviews(id) {
     
@@ -37,5 +37,5 @@ function getGoogleReviews(id) {
     .catch(console.log);
 }
 
-getGoogleReviews('com.pokerstars.uk');
-getAppleReviews('co.uk.camelot');
+getGoogleReviews('com.bet365Wrapper.Bet365_Application');
+getAppleReviews('com.bet365.bet365GamesApp');
